@@ -12,6 +12,8 @@ public class CurrencyConverter {
         exRate [1] = 0.92;
         exRate [2] = 0.03;
 
+
+        // для коммита4щд
         String[] availableCurr = {"EURO","USD", "TL"};
 
         PrintIntro(availableCurr);
