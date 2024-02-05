@@ -5,7 +5,7 @@ public class CurrencyConverter {
     public static void main(String[] args) {
         String currencyFrom;
         String currencyIn;
-        double x = 0;
+        double x;
         double y = 0;
         double [] exRate = new double [3];
         exRate [0] = 1.0;
@@ -13,7 +13,7 @@ public class CurrencyConverter {
         exRate [2] = 0.03;
 
 
-        // для коммита4щдsd555sdf125
+
         String[] availableCurr = {"EURO","USD", "TL"};
 
         PrintIntro(availableCurr);
