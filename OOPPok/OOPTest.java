@@ -21,7 +21,7 @@ public class OOPTest {
 
 class Pokemon {
     String pokemonName;
-    int currentHp = 0;
+    int currentHp;
     int maxHp;
     int attack;
     int defense;
