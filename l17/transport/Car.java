@@ -1,17 +1,12 @@
 package l17.transport;
 
-public class Car {
+public class Car extends Transport {
 
-        String name;
-        int age;
 
-        public Car(String name, int age) {
-            this.name = name;
-            this.age = age;
+        public Car(String model, int year) {
+            super(5 , model, year);
+
         }
 
 
-        public String toString() {
-            return "Car  |  " + this.name + "  |  " + this.age ;
-        }
 }

@@ -1,17 +1,9 @@
 package l17.transport;
 
-public class Bus {
+public class Bus extends Transport {
 
-    String name;
-    int age;
+        public Bus(String model, int year) {
+            super(40 , model, year);
 
-    public Bus(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-
-    public String toString() {
-        return "Bus  |  " + this.name + "  |  " + this.age ;
-    }
+        }
 }
