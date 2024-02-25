@@ -1,6 +1,7 @@
 package l28;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Iterator;
 
 class BookShelf {
 
@@ -16,18 +17,14 @@ class BookShelf {
                 this.author = author;
                 this.year = year;
             }
-
+            @Override
+            public String toString() {
+                return title + " by " + author + ", " + year;
+            }
             public String getTitle() {
                 return title;
             }
 
-            public String getAuthor() {
-                return author;
-            }
-
-            public int getYear() {
-                return year;
-            }
         }
 
         public void addBook(String title, String author, int year) {
@@ -36,13 +33,41 @@ class BookShelf {
             System.out.println("Книга " + title + " добавлена на полку");
         }
 
-        public void infoBooks() {
-            System.out.println("Книги на полке: \n");
-            for (Book book : books) {
-                System.out.println("Название: " + book.getTitle() + " Автор: " + book.getAuthor()
-                        + " Год издания: " + book.getYear());
+
+        public void removeBook(String bookToRemove)
+        {
+            for (int i = 0; i < books.size(); i++) {
+                Book currentBook = books.get(i);
+
+                if (currentBook.getTitle().equals(bookToRemove))
+                {
+                    books.remove(i);
+                    System.out.println("Книга " + bookToRemove + " удалена с полки");
+                    return;
+                }
             }
         }
 
-    }
 
+        class BookIterator implements Iterator<Book> {
+
+            int current = 0;
+
+            @Override
+            public boolean hasNext() {
+                return current < books.size();
+            }
+
+            @Override
+            public Book next() {
+                Book book = books.get(current);
+                current++;
+                return book;
+            }
+        }
+
+        public BookIterator getIterator() {
+            return new BookIterator();
+        }
+
+    }

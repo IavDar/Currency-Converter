@@ -10,7 +10,16 @@ public class MainBookShelf {
         bookShelf.addBook("Sociology", "Angela Stone", 2024);
         System.out.println();
 
-        bookShelf.infoBooks();
+        bookShelf.removeBook("Economy");
+        System.out.println();
 
+
+        System.out.println("Список оставшихся книг:");
+
+        BookShelf.BookIterator iterator = bookShelf.getIterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
     }
+
 }
